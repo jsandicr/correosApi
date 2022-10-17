@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EnvioCorreosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="T_EnvioCorreos">
+    <Key>
+      <PropertyRef Name="CorreoID" />
+    </Key>
+    <Property Name="CorreoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Destinatario" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="CopiaDestinatario" Type="varchar" MaxLength="150" />
+    <Property Name="Asunto" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="CuerpoMensaje" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="FechaHoraEnvio" Type="datetime2" Precision="7" />
+  </EntityType>
+  <Function Name="Registrar_Correos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Destinatario" Type="varchar" Mode="In" />
+    <Parameter Name="CopiaDestinatario" Type="varchar" Mode="In" />
+    <Parameter Name="Asunto" Type="varchar" Mode="In" />
+    <Parameter Name="CuerpoMensaje" Type="varchar" Mode="In" />
+    <Parameter Name="FechaHoraEnvio" Type="datetime2" Mode="In" />
+  </Function>
+  <EntityContainer Name="EnvioCorreosModelStoreContainer">
+    <EntitySet Name="T_EnvioCorreos" EntityType="Self.T_EnvioCorreos" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

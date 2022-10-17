@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EnvioCorreosModelStoreContainer" CdmEntityContainer="EnvioCorreosEntities2">
+    <EntitySetMapping Name="T_EnvioCorreos">
+      <EntityTypeMapping TypeName="EnvioCorreosModel.T_EnvioCorreos">
+        <MappingFragment StoreEntitySet="T_EnvioCorreos">
+          <ScalarProperty Name="CorreoID" ColumnName="CorreoID" />
+          <ScalarProperty Name="Destinatario" ColumnName="Destinatario" />
+          <ScalarProperty Name="CopiaDestinatario" ColumnName="CopiaDestinatario" />
+          <ScalarProperty Name="Asunto" ColumnName="Asunto" />
+          <ScalarProperty Name="CuerpoMensaje" ColumnName="CuerpoMensaje" />
+          <ScalarProperty Name="FechaHoraEnvio" ColumnName="FechaHoraEnvio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Registrar_Correos" FunctionName="EnvioCorreosModel.Store.Registrar_Correos" />
+  </EntityContainerMapping>
+</Mapping>
